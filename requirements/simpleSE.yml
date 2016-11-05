@@ -15,21 +15,23 @@
 #  * extra files can be included with 
 
 
+# this is the TOP LEVEL requirement, everything should trace back to this one.
 text: |
-  A user (architect or designer) needs to manage requirements of a complex system.
-  A good requirement management system requires
+  A user (architect or designer) **needs** to manage requirements of a complex system.
+  A good requirement management system has a set of high-level requirements
   
 requirements:
   
-  - text: **must** support requirement workflow
-  - text: **must** have traceability
-  - text: **must** have version control
-  - text: **must** support multiple users
-  - text:  **must** be user-friendly and support 'traditional' way of writing requrements.
+  - text: tool **must** support requirement workflow
+    decomposition: 
+      text : typical workflow consists of setting status to 'draft/reviewed/confirmed' or similar
+      requirements:
+        - text: each requirement **must** have a traceable status
+        - text: each requirment **could** have default status, like 'draft'
+      
+  - text: tool **must** have traceability
+  - text: tool **must** have version control
+  - text: tool **must** support multiple users
+  - text: tool **must** be user-friendly and support "traditional" way of writing requrements.
     decomposition: !include userFriendly.yml
   
----
-validation:
-  id: val01
-  text: |
-    [pandoc-flavored markdown](http://pandoc.org/MANUAL.html#pandocs-markdown) is a commonly used markup system.
