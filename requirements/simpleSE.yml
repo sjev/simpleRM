@@ -15,11 +15,18 @@
 #  * extra files can be included with 
 
 
-
-
-
-text: The system **must** have a user-friendly way of writing requrements.
-decomposition: !include userFriendly.yml
+text: |
+  A user (architect or designer) needs to manage requirements of a complex system.
+  A good requirement management system requires
+  
+requirements:
+  
+  - text: **must** support requirement workflow
+  - text: **must** have traceability
+  - text: **must** have version control
+  - text: **must** support multiple users
+  - text:  **must** be user-friendly and support 'traditional' way of writing requrements.
+    decomposition: !include userFriendly.yml
   
 ---
 validation:
