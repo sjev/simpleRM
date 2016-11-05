@@ -1,37 +1,26 @@
-# example comment
+# 
+# How it works
+# ---------------
+#
+# decomposition is a tree starting from a single requirement and decomposing them into
+# multiple requirements, until a requirement can be tranformed into design choice
+# 
+#  Workflow
+# ----------
+#  * start from the root requirement and decompose further, example below.
+#    supported objects
+#     - requrements = a list with separate requirements  
+#     - decomposition = rationale on how to split to multiple requirements
+#  * separate decomposition trees are separated by `---` separators
+#  * extra files can be included with 
 
 
-object: requirement 
-type: functional
+
+
+
 text: The system **must** have a user-friendly way of writing requrements.
-decomposition: 
-  text : |
-    The easiest way of writing is just plain text. It provides the freedom of writing in users favorite editor,
-    and enables to focus on the process and the contents, rather than the tooling.
-    There are different options for text-based light-weight markup that already exist.
-    One of the most popular ones are
-    
-    * markdown (and its flavors)
-    * reStructuredText
-    
-    for an overview of their synthax, see [here](http://hyperpolyglot.org/lightweight-markup)
-    
-    Because we need to cross-reference and tag requirements, the system also needs some kind of directive.
-    Being able to add commnents is a welcome feature.
-    
-    The system must support requirements growing into thousands, 
-    
-  requirements:
-    
-    - type: functional
-      text: The system **must** use plain text input
+decomposition: !include userFriendly.yml
   
-    - type: functional
-      text: The system **must** enable cross referencing and structuring the requirements
-  
-    - type: functional
-      text: The system **should** support comments
-
 ---
 validation:
   id: val01
