@@ -24,24 +24,22 @@ requirements:
   
   R1: 
     req: tool **must** support requirement workflow
-    decomposition: 
-      rationale : | 
-        typical workflow consists of setting status to 'draft/reviewed/confirmed' or similar.
-        requirements have a certain type, for example 'functional' or 'unit'
-      requirements:
-        R1.1: 
-          req : each requirement **must** have a status
-         
-        R1.2: 
-          req : each requirement **must** have a unique identifier
-          solution: S004
+    decomposition:  |
+      typical workflow consists of setting status to 'draft/reviewed/confirmed' or similar.
+      requirements have a certain type, for example 'functional' or 'unit'
+    requirements:
+      R1.1: 
+        req : each requirement **must** have a status
+       
+      R1.2: 
+        req : each requirement **must** have a unique identifier
+        solution: S004
       
   R2 : 
     req: tool **must** have requirement traceability
-    decomposition: 
-      rationale: every requirement **must** be traceable up to the origin and down to the solution
-      requirements:
-        -req 
+    decomposition: every requirement **must** be traceable up to the origin and down to the solution
+    requirements:
+      R2.1 : dummy requirement
       
   R3 : 
     req: tool **must** have version control
@@ -49,10 +47,17 @@ requirements:
     
   R4 : 
     req: tool **must** support multiple users
+    solution: S003
   R5 : 
     req : tool **must** be user-friendly and support "traditional" way of writing requrements.
     decomposition: !include userFriendly.yml
   
+  R6: 
+    req: tool **must** generate requirement documents 
+    requirements:
+      R6.1: tool **must** produce html output
+      R6.2: tool **should** produce pdf
+    
 # this section describes found solutions. These don't need to be cascading.
 solutions:
   S001 : |
@@ -62,5 +67,7 @@ solutions:
   S003 : | 
     by using plain text files and *git* version control, keeping track of changes is provided out of the box.
     git tags can be used for baselining the system.
-  S004 : each requirement is assigned 
+  S004 : | 
+    each requirement is assigned a unique key by the user. When extracting requirements, these
+    will be sorted by their keys
   
