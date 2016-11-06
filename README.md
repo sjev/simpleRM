@@ -13,13 +13,19 @@ In short, this tool is designed to assist in Systems Engineering process. It pro
 
 `simpleRM` is inspired by best practices used ins Systems Engineering (V-model, decompositions, validation etc), and functionality available in high-end RM systems. The main difference is that this tool aims at being as simple as possible and 'getting out of the way' enabling an architect or designer to focus on what really matters: logically decomposing high-level requirments to low-level unit requirements.
 
-*this project documents its own requirements decomposition and design choices, how cool is that!*
+
 
 ## Why simpleRM?
 * because designing complex systems requires a highly structured approach
 * because the process of decomposing requirements is more important than the tools used
 * because architects and designers can do a better job with a good tool
 * because tools should be as simple as possible, but not any simpler
+
+## Example ouptput documentation
+
+*this project documents its own requirements decomposition and design choices, how cool is that!*
+
+See:  https://sjev.github.io/simpleRM/
 
 
 ## Alternatives
