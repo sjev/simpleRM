@@ -33,7 +33,7 @@ class Requirement():
         
         self.status = properties["status"] if "status" in properties.keys() else "draft"
         
-        for k in ["tag","status","solution","validation"]:
+        for k in ["tag","req","rationale","status","solution","validation"]:
             if k in properties.keys():
                 self.__setattr__(k, properties[k])
 
