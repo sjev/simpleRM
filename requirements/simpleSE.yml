@@ -25,7 +25,7 @@ requirements:
   
   R001:
     req : Requirements **must** be documented in a consistent, structural way.
-    decomposition : |
+    rationale : |
       A user (architect or designer) **needs** to manage requirements of a complex system.
       A good requirement management system has a set of high-level requirements
   
@@ -65,8 +65,8 @@ requirements:
       R009:
         req: tool **must** generate requirement documents 
         requirements:
-          R008a:  {req: tool **must** produce html output}
-          R008b:  {req: tool **should** produce pdf}
+          R009a:  {req: tool **must** produce html output}
+          R009b:  {req: tool **should** produce pdf}
       
       R010:
         req: tool **must** have requirement traceability
