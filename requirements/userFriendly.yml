@@ -20,12 +20,15 @@ decomposition : |
     
 requirements:
   
-  -
-    req: The system **must** use plain text input
+  R008a:
+    req: tool **must** use plain text input
 
-  -
-    req: The system **must** enable cross referencing and structuring the requirements
+  R008b:
+    req: tool **must** enable cross referencing and structuring the requirements
 
-  -
-    req: The system **should** support comments
+  R008c:
+    req: tool **should** support comments
+  
+  R008d: 
+    req: tool **shoud** be able to check if an requirement identifier is available
     
