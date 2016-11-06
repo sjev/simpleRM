@@ -1,5 +1,7 @@
 # user friendly decomposition
-text : |
+req : tool **must** be user-friendly and support "traditional" way of writing requrements.
+
+decomposition : |
     The easiest way of writing is just plain text. It provides the freedom of writing in users favorite editor,
     and enables to focus on the process and the contents, rather than the tooling.
     There are different options for text-based light-weight markup that already exist.
@@ -18,12 +20,12 @@ text : |
     
 requirements:
   
-  - type: functional
-    text: The system **must** use plain text input
+  R5.1 :
+    req: The system **must** use plain text input
 
-  - type: functional
-    text: The system **must** enable cross referencing and structuring the requirements
+  R5.2 :
+    req: The system **must** enable cross referencing and structuring the requirements
 
-  - type: functional
-    text: The system **should** support comments
+  R5.3:
+    req: The system **should** support comments
     
