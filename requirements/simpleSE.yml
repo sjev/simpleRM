@@ -16,51 +16,61 @@
 
 
 # this is the TOP LEVEL requirement, everything should trace back to this one.
-ROOT: |
-  A user (architect or designer) **needs** to manage requirements of a complex system.
-  A good requirement management system has a set of high-level requirements
+ROOT: | 
+  To manage a coplex system design and validation, top-level requirements need
+  to be decomposed to low level unit requirements. Each requirement should have a 
+  design solution and validation.
   
 requirements:
   
-  R1: 
-    req: tool **must** support requirement workflow
-    decomposition:  |
-      typical workflow consists of setting status to 'draft/reviewed/confirmed' or similar.
-      requirements have a certain type, for example 'functional' or 'unit'
-    requirements:
-      R1.1: 
-        req : each requirement **must** have a status
-       
-      R1.2: 
-        req : each requirement **must** have a unique identifier
-        solution: S004
-      
-  R2 : 
-    req: tool **must** have requirement traceability
-    decomposition: every requirement **must** be traceable up to the origin and down to the solution
-    requirements:
-      R2.1 : 
-        req : dummy requirement
-      
-  R3 : 
-    req: tool **must** have version control
-    solution: S003
-    
-  R4 : 
-    req: tool **must** support multiple users
-    solution: S003
+  -
+    req : Requirements **must** be documented in a consistent, structural way.
+    decomposition : |
+      A user (architect or designer) **needs** to manage requirements of a complex system.
+      A good requirement management system has a set of high-level requirements
   
-  # here is an example on how to include a separate file
-  R5 : !include userFriendly.yml
-    
-    
-  
-  R6: 
-    req: tool **must** generate requirement documents 
     requirements:
-      R6.1: {req: tool **must** produce html output}
-      R6.2: {req: tool **should** produce pdf}
-    
+      
+      - 
+        req: tool **must** support requirement workflow
+        decomposition:  |
+          typical workflow consists of setting status to 'draft/reviewed/confirmed' or similar.
+          requirements have a certain type, for example 'functional' or 'unit'
+        requirements:
+          - 
+            req : each requirement **must** have a status
+           
+          -
+            req : each requirement **must** have a unique identifier
+            solution: S004
+          
+      - 
+        req: tool **must** have requirement traceability
+        decomposition: every requirement **must** be traceable up to the origin and down to the solution
+        requirements:
+          -
+            req : dummy requirement
+            id : dummy
+          
+      -
+        req: tool **must** have version control
+        solution: S003
+        
+      - 
+        req: tool **must** support multiple users
+        solution: S003
+      
+      # here is an example on how to include a separate file
+      - !include userFriendly.yml
+        
+        
+      
+      - 
+        req: tool **must** generate requirement documents 
+        requirements:
+          - {req: tool **must** produce html output}
+          - {req: tool **should** produce pdf}
+      
 # this section describes found solutions. These don't need to be cascading.
 solutions:
   S001 : |
