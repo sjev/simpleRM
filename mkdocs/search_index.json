@@ -1,0 +1,114 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to simpleRM documentation\n\uf0c1\n\n\nThis documentation describes \nrequirements\n , \ndesign\n and \nvalidation\n of the \nsimpleRM\n tool\n\n\nIntroduction\n\uf0c1\n\n\nsimpleRM\n leverages several common technologies to satisfy the requirements of a good requirements manamgement tool.\n\n\n\n\nYAML\n - human friendly data serialization standard is used for data entry in any text editor\n\n\ngit ensures that all requirements are under version control\n\n\nMkDocs\n - produces beautiful, searchable documentation, ready for production\n\n\n\n\n\n\nNote\n\n\nrequirements\n , \ndesign\n and \nvalidation\n sections of this documentation have \nbeen created by the \nsimpleRM\n module itself, as an example of its usage.  \n\n\n\n\nDocumentation workflow\n\uf0c1\n\n\nCreating documentation for an engineering project typically requires these steps:\n\n\n\n\nEnter requirements and decomposition in yaml format.\n\n\nUse \nsimpleRM\n to parse data, check it for consistency and create markdown docs for \nrequirements.md\n, \nsolutions.md\n\n    and \nvalidation.md\n  \n\n\nEdit \ndocs/index.md\n to tie it all together\n\n\nBuild documentation with mkdocs",
+            "title": "Home"
+        },
+        {
+            "location": "/#welcome-to-simplerm-documentation",
+            "text": "This documentation describes  requirements  ,  design  and  validation  of the  simpleRM  tool",
+            "title": "Welcome to simpleRM documentation"
+        },
+        {
+            "location": "/#introduction",
+            "text": "simpleRM  leverages several common technologies to satisfy the requirements of a good requirements manamgement tool.   YAML  - human friendly data serialization standard is used for data entry in any text editor  git ensures that all requirements are under version control  MkDocs  - produces beautiful, searchable documentation, ready for production    Note  requirements  ,  design  and  validation  sections of this documentation have \nbeen created by the  simpleRM  module itself, as an example of its usage.",
+            "title": "Introduction"
+        },
+        {
+            "location": "/#documentation-workflow",
+            "text": "Creating documentation for an engineering project typically requires these steps:   Enter requirements and decomposition in yaml format.  Use  simpleRM  to parse data, check it for consistency and create markdown docs for  requirements.md ,  solutions.md \n    and  validation.md     Edit  docs/index.md  to tie it all together  Build documentation with mkdocs",
+            "title": "Documentation workflow"
+        },
+        {
+            "location": "/requirements/",
+            "text": "Requirements\n\uf0c1\n\n\n\n\n\n    \ntag\n\n    \nstatus\n\n    \nsolution\n\n    \nvalidation\n\n\n\n  \n\n      \n \nR001\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR002\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR003\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR004\n\n\n      \ndraft\n\n      \nS004\n\n      \nNone\n\n  \n\n  \n\n      \n \nR004a\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR006\n\n\n      \ndraft\n\n      \nS003\n\n      \nNone\n\n  \n\n  \n\n      \n \nR007\n\n\n      \ndraft\n\n      \nS003\n\n      \nNone\n\n  \n\n  \n\n      \n \nR008\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR008a\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR008b\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR008c\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR008d\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR009\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR009a\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR009b\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n  \n\n      \n \nR010\n\n\n      \ndraft\n\n      \nNone\n\n      \nNone\n\n  \n\n\n\n\n\n\n\nR001 Requirements \nmust\n be documented in a consistent, structural way.\n\uf0c1\n\n\n Rationale:\n A user (architect or designer) \nneeds\n to manage requirements of a complex system.\nA good requirement management system has a set of high-level requirements\n \n\n\n Parent:\n \nROOT\n\n\n\n\nR002 tool \nmust\n support requirement workflow\n\uf0c1\n\n\n Rationale:\n requirements are defined and changed during development process.\nUsually a requirement goes through different stages from \n \n\n\n Parent:\n \nR001\n\n\n\n\nR003 each requirement \nmust\n have a status\n\uf0c1\n\n\n Rationale:\n typical workflow consists of setting status to 'draft/reviewed/confirmed' or similar. \n\n\n Parent:\n \nR002\n\n\n\n\nR004 each requirement \nmust\n have a unique identifier\n\uf0c1\n\n\n Rationale:\n needed to link requirements \n\n\n Parent:\n \nR002\n\n\n\n\nR004a tool \nmust\n check identifiers for consistency\n\uf0c1\n\n\n Rationale:\n because identifiers are entered by hand, there is a chance of duplicate entries. these are not allowed \n\n\n Parent:\n \nR002\n\n\n\n\nR006 tool \nmust\n have version control\n\uf0c1\n\n\n Rationale:\n None \n\n\n Parent:\n \nR001\n\n\n\n\nR007 tool \nmust\n support multiple users\n\uf0c1\n\n\n Rationale:\n None \n\n\n Parent:\n \nR001\n\n\n\n\nR008 tool \nmust\n be user-friendly and support \"traditional\" way of writing requrements.\n\uf0c1\n\n\n Rationale:\n None \n\n\n Parent:\n \nR001\n\n\n\n\nR008a tool \nmust\n use plain text input\n\uf0c1\n\n\n Rationale:\n None \n\n\n Parent:\n \nR008\n\n\n\n\nR008b tool \nmust\n enable cross referencing and structuring the requirements\n\uf0c1\n\n\n Rationale:\n None \n\n\n Parent:\n \nR008\n\n\n\n\nR008c tool \nshould\n support comments\n\uf0c1\n\n\n Rationale:\n None \n\n\n Parent:\n \nR008\n\n\n\n\nR008d tool \nshoud\n be able to check if an requirement identifier is available\n\uf0c1\n\n\n Rationale:\n None \n\n\n Parent:\n \nR008\n\n\n\n\nR009 tool \nmust\n generate requirement documents\n\uf0c1\n\n\n Rationale:\n None \n\n\n Parent:\n \nR001\n\n\n\n\nR009a tool \nmust\n produce html output\n\uf0c1\n\n\n Rationale:\n None \n\n\n Parent:\n \nR009\n\n\n\n\nR009b tool \nshould\n produce pdf\n\uf0c1\n\n\n Rationale:\n None \n\n\n Parent:\n \nR009\n\n\n\n\nR010 tool \nmust\n have requirement traceability\n\uf0c1\n\n\n Rationale:\n every requirement \nmust\n be traceable up to the origin and down to the solution \n\n\n Parent:\n \nR001",
+            "title": "Requirements"
+        },
+        {
+            "location": "/requirements/#requirements",
+            "text": "tag \n     status \n     solution \n     validation  \n   \n         R001 \n\n       draft \n       None \n       None \n   \n   \n         R002 \n\n       draft \n       None \n       None \n   \n   \n         R003 \n\n       draft \n       None \n       None \n   \n   \n         R004 \n\n       draft \n       S004 \n       None \n   \n   \n         R004a \n\n       draft \n       None \n       None \n   \n   \n         R006 \n\n       draft \n       S003 \n       None \n   \n   \n         R007 \n\n       draft \n       S003 \n       None \n   \n   \n         R008 \n\n       draft \n       None \n       None \n   \n   \n         R008a \n\n       draft \n       None \n       None \n   \n   \n         R008b \n\n       draft \n       None \n       None \n   \n   \n         R008c \n\n       draft \n       None \n       None \n   \n   \n         R008d \n\n       draft \n       None \n       None \n   \n   \n         R009 \n\n       draft \n       None \n       None \n   \n   \n         R009a \n\n       draft \n       None \n       None \n   \n   \n         R009b \n\n       draft \n       None \n       None \n   \n   \n         R010 \n\n       draft \n       None \n       None",
+            "title": "Requirements"
+        },
+        {
+            "location": "/requirements/#r001-requirements-must-be-documented-in-a-consistent-structural-way",
+            "text": "Rationale:  A user (architect or designer)  needs  to manage requirements of a complex system.\nA good requirement management system has a set of high-level requirements\n    Parent:   ROOT",
+            "title": "R001 Requirements must be documented in a consistent, structural way."
+        },
+        {
+            "location": "/requirements/#r002-tool-must-support-requirement-workflow",
+            "text": "Rationale:  requirements are defined and changed during development process.\nUsually a requirement goes through different stages from \n    Parent:   R001",
+            "title": "R002 tool must support requirement workflow"
+        },
+        {
+            "location": "/requirements/#r003-each-requirement-must-have-a-status",
+            "text": "Rationale:  typical workflow consists of setting status to 'draft/reviewed/confirmed' or similar.    Parent:   R002",
+            "title": "R003 each requirement must have a status"
+        },
+        {
+            "location": "/requirements/#r004-each-requirement-must-have-a-unique-identifier",
+            "text": "Rationale:  needed to link requirements    Parent:   R002",
+            "title": "R004 each requirement must have a unique identifier"
+        },
+        {
+            "location": "/requirements/#r004a-tool-must-check-identifiers-for-consistency",
+            "text": "Rationale:  because identifiers are entered by hand, there is a chance of duplicate entries. these are not allowed    Parent:   R002",
+            "title": "R004a tool must check identifiers for consistency"
+        },
+        {
+            "location": "/requirements/#r006-tool-must-have-version-control",
+            "text": "Rationale:  None    Parent:   R001",
+            "title": "R006 tool must have version control"
+        },
+        {
+            "location": "/requirements/#r007-tool-must-support-multiple-users",
+            "text": "Rationale:  None    Parent:   R001",
+            "title": "R007 tool must support multiple users"
+        },
+        {
+            "location": "/requirements/#r008-tool-must-be-user-friendly-and-support-traditional-way-of-writing-requrements",
+            "text": "Rationale:  None    Parent:   R001",
+            "title": "R008 tool must be user-friendly and support &quot;traditional&quot; way of writing requrements."
+        },
+        {
+            "location": "/requirements/#r008a-tool-must-use-plain-text-input",
+            "text": "Rationale:  None    Parent:   R008",
+            "title": "R008a tool must use plain text input"
+        },
+        {
+            "location": "/requirements/#r008b-tool-must-enable-cross-referencing-and-structuring-the-requirements",
+            "text": "Rationale:  None    Parent:   R008",
+            "title": "R008b tool must enable cross referencing and structuring the requirements"
+        },
+        {
+            "location": "/requirements/#r008c-tool-should-support-comments",
+            "text": "Rationale:  None    Parent:   R008",
+            "title": "R008c tool should support comments"
+        },
+        {
+            "location": "/requirements/#r008d-tool-shoud-be-able-to-check-if-an-requirement-identifier-is-available",
+            "text": "Rationale:  None    Parent:   R008",
+            "title": "R008d tool shoud be able to check if an requirement identifier is available"
+        },
+        {
+            "location": "/requirements/#r009-tool-must-generate-requirement-documents",
+            "text": "Rationale:  None    Parent:   R001",
+            "title": "R009 tool must generate requirement documents"
+        },
+        {
+            "location": "/requirements/#r009a-tool-must-produce-html-output",
+            "text": "Rationale:  None    Parent:   R009",
+            "title": "R009a tool must produce html output"
+        },
+        {
+            "location": "/requirements/#r009b-tool-should-produce-pdf",
+            "text": "Rationale:  None    Parent:   R009",
+            "title": "R009b tool should produce pdf"
+        },
+        {
+            "location": "/requirements/#r010-tool-must-have-requirement-traceability",
+            "text": "Rationale:  every requirement  must  be traceable up to the origin and down to the solution    Parent:   R001",
+            "title": "R010 tool must have requirement traceability"
+        }
+    ]
+}
