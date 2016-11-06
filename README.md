@@ -10,8 +10,6 @@
 
 In short, this tool is designed to assist in Systems Engineering process. It provides a framework for doing [requirements decomposition](https://www.ibm.com/developerworks/community/blogs/requirementsmanagement/entry/the_practical_applications_of_traceability_part_1_what_s_really_going_on_when_you_decompose_a_requirement?lang=en)  in a structured way.
 
-<img src="http://assets.amuniversal.com/1a8710306d5c01301d80001dd8b71c47"/>
-
 
 `simpleRM` is inspired by best practices used ins Systems Engineering (V-model, decompositions, validation etc), and functionality available in high-end RM systems. The main difference is that this tool aims at being as simple as possible and 'getting out of the way' enabling an architect or designer to focus on what really matters: logically decomposing high-level requirments to low-level unit requirements.
 
