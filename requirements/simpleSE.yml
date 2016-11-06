@@ -36,19 +36,19 @@ requirements:
         rationale : | 
           requirements are defined and changed during development process.
           Usually a requirement goes through different stages from 
-          requirements:
-            R003: 
-              req : each requirement **must** have a status
-              rationale : "typical workflow consists of setting status to 'draft/reviewed/confirmed' or similar."
-            R004:
-              req : each requirement **must** have a unique identifier
-              rationale : "needed to link requirements"
-              solution: S004
-              
-            R004a:
-              req : tool **must** check identifiers for consistency
-              rationale : "because identifiers are entered by hand, there is a chance of duplicate entries. these are not allowed"
-              related: R008d
+        requirements:
+          R003: 
+            req : each requirement **must** have a status
+            rationale : "typical workflow consists of setting status to 'draft/reviewed/confirmed' or similar."
+          R004:
+            req : each requirement **must** have a unique identifier
+            rationale : "needed to link requirements"
+            solution: S004
+            
+          R004a:
+            req : tool **must** check identifiers for consistency
+            rationale : "because identifiers are entered by hand, there is a chance of duplicate entries. these are not allowed"
+            related: R008d
             
               
       R006:

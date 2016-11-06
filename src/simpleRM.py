@@ -9,6 +9,7 @@ main simpleRM module
 
 import yaml
 import loader
+from markdown_tools import htmlTable
 
 def walk_gen(d, parent='ROOT'):
     """ tree walker, used to traverse through requirement trees """
@@ -30,11 +31,20 @@ class Requirement():
         self.tag = tag # unique identifier
         self.parent = parent # parent requirement
         
+        self.status = properties["status"] if "status" in properties.keys() else "draft"
+        
+        for k in ["tag","status","solution","validation"]:
+            if k in properties.keys():
+                self.__setattr__(k, properties[k])
+
         if 'requirements' in properties.keys():
             self.children = list(properties['requirements'].keys())
-        else:
-            self.children = None
+
     
+    def __getattr__(self,attr):
+        """ called when attr is not found in ususal places"""
+        return None
+            
     def __repr__(self):
         return '%s parent:%s children:%s' % (self.tag,self.parent, str(self.children))
         
@@ -48,4 +58,15 @@ class DataProvider():
     
         self.requirements = [r for r in walk_gen(self._data['requirements'])]
     
+    
+    def requirementsTable(self):
+        """ create an overview table of the requirements """
+        
+        header = ["tag","status","solution","validation"]
+
+        rows = []
+        for r in self.requirements:
+            rows.append([ str(getattr(r,h)) for h in header])
+        
+        return dict(header=header,rows=rows)
         

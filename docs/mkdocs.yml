@@ -1,5 +1,8 @@
 site_name: simpleRM docs
 
+pages:
+  - 'index.md'
+  - 'requirements.md'
 
 extra_css:
     - css/extra.css

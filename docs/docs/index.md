@@ -16,7 +16,8 @@ This documentation describes `requirements` , `design` and `validation` of the *
     
 !!! note
 
-    This documentation has been created by the **simpleRM** module itself, as an example of its usage.  
+    `requirements` , `design` and `validation` sections of this documentation have 
+    been created by the **simpleRM** module itself, as an example of its usage.  
     
     
     

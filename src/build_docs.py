@@ -7,9 +7,22 @@ script to build documentation using simpleRM
 """
 
 from simpleRM import DataProvider
+from bottle import template
 
-fName = '../requirements/simpleSE.yml'
+ROOT = '../requirements/simpleSE.yml'
 
-dp = DataProvider(fName)
+requirements_md = '../docs/docs/requirements.md'
+
+dp = DataProvider(ROOT)
+
+# build requirements
+txt = template("templates/requirements.tpl", reqTable=dp.requirementsTable())
+
+with open(requirements_md,'w') as fid:
+    fid.write(txt)
+
+
+
+
 
 print('done')
