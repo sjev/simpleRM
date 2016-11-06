@@ -26,3 +26,9 @@ In short, this tool is designed to assist in Systems Engineering process. It pro
 
 * commercial requirement management packages ($$$), there are [a lot of them](http://makingofsoftware.com/resources/list-of-rm-tools)
 * open-source text-based requirement managers, see [rmtoo](https://github.com/florath/rmtoo) and [doorstop](https://github.com/jacebrowning/doorstop)
+
+## Why simpleRM again?
+
+<img src="https://imgs.xkcd.com/comics/good_code.png"/>
+
+...the 'question mark' is where `simpleRM` is ;-)
