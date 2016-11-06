@@ -1,1 +1,10 @@
-site_name: My Docs
+site_name: simpleRM docs
+
+
+extra_css:
+    - css/extra.css
+
+markdown_extensions:
+    - toc:
+        permalink: 
+    - admonition:
