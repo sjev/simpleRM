@@ -16,7 +16,7 @@ requirements_md = '../docs/docs/requirements.md'
 dp = DataProvider(ROOT)
 
 # build requirements
-txt = template("templates/requirements.tpl", reqTable=dp.requirementsTable())
+txt = template("templates/requirements.tpl",dp= dp)
 
 with open(requirements_md,'w') as fid:
     fid.write(txt)

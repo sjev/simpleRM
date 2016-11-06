@@ -9,7 +9,7 @@ main simpleRM module
 
 import yaml
 import loader
-from markdown_tools import htmlTable
+
 
 def walk_gen(d, parent='ROOT'):
     """ tree walker, used to traverse through requirement trees """
