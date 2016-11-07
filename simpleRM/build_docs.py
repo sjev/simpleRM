@@ -6,7 +6,7 @@ script to build documentation using simpleRM
 @author: Jev Kuznetsov
 """
 
-from simpleRM import DataProvider
+from core import DataProvider
 from bottle import template
 
 ROOT = '../requirements/simpleSE.yml'

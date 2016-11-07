@@ -23,55 +23,76 @@ ROOT: |
   
 requirements:
   
-  R001:
-    req : Requirements **must** be documented in a consistent, structural way.
+  A01: 
+    req : I **want** requirements to be documented in a consistent, structural way.
     rationale : |
       A user (architect or designer) **needs** to manage requirements of a complex system.
-      A good requirement management system has a set of high-level requirements
+      A good requirement management system has a set of high-level requirements  
+
   
+  A02: 
+    req: I **want** to track requirement history and create baselines
     requirements:
-      
-      R002:
-        req: tool **must** support requirement workflow
-        rationale : | 
-          requirements are defined and changed during development process.
-          Usually a requirement goes through different stages from 
-        requirements:
-          R003: 
-            req : each requirement **must** have a status
-            rationale : "typical workflow consists of setting status to 'draft/reviewed/confirmed' or similar."
-          R004:
-            req : each requirement **must** have a unique identifier
-            rationale : "needed to link requirements"
-            solution: S004
-            
-          R004a:
-            req : tool **must** check identifiers for consistency
-            rationale : "because identifiers are entered by hand, there is a chance of duplicate entries. these are not allowed"
-            related: R008d
-            
-              
       R006:
         req: tool **must** have version control
         solution: S003
-        
-      R007:
-        req: tool **must** support multiple users
-        solution: S003
-      
-        # here is an example on how to include a separate file
-      R008: !include userFriendly.yml
-      
+  
+  A03:
+    req: | 
+      I **want** to spend as little time as possible on mechanical tasks, like
+      formatting documents.
+    requirements:
       R009:
         req: tool **must** generate requirement documents 
         requirements:
           R009a:  {req: tool **must** produce html output}
           R009b:  {req: tool **should** produce pdf}
       
-      R010:
-        req: tool **must** have requirement traceability
-        rationale: every requirement **must** be traceable up to the origin and down to the solution
-        # TODO: decompose further
+      # here is an example on how to include a separate file
+      R008: !include userFriendly.yml
+
+  A04:
+    req: I **want**  to match each requirement to a *solution* and *validation*
+  
+  A05: 
+    req: I **want** each requirement to be traceable
+    requirements:
+        R004:
+            req : each requirement **must** have a unique identifier
+            rationale : "needed to link requirements for traceablility"
+            solution: S004
+  A06: 
+    req: I **want** an overview that shows ho high-level requirements match final low-level solutions
+  
+    
+  A07:
+    req: I **want** each requirement to have a clear status, from 'draft' to 'satisfied'
+    rationale : | 
+          requirements are defined and changed during development process.
+          Usually a requirement goes through different stages from draft to 'validated' or 'satisfied'
+    requirements:
+      R003: 
+        req : each requirement **must** have a status
+        rationale : "typical workflow consists of setting status to 'draft/reviewed/confirmed' or similar."
+
+  A08:
+    req: I **want** the tool to check for requirment consistency
+    requirements:
+      R004a:
+        req : tool **must** check identifiers for consistency
+        rationale : "because identifiers are entered by hand, there is a chance of duplicate entries. these are not allowed"
+        related: R008d
+
+  A08:
+    req: I **want** to easliy cooperate with others on writing requirement documents
+    requirements:
+      R007:
+        req: tool **must** support multiple users
+        solution: S003
+
+  A09:
+    req: I **want** to produce graphic charts visualizing requirement dependancy
+
 
 # this section describes found solutions. These don't need to be cascading.
 solutions:
