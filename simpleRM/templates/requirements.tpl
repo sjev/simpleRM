@@ -23,7 +23,7 @@
 </table>
 
 
-%for r in dp.requirements:
+%for r in dp.requirements.values():
 <a id="{{r.tag}}"></a>
 ### {{r.tag}} {{r.req}}
 ** Rationale:** {{r.rationale}} <br>

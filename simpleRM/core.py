@@ -59,7 +59,9 @@ class DataProvider():
         
         self._data = yaml.load(open(fName,'r'),loader.Loader) 
     
-        self.requirements = [r for r in walk_gen(self._data['requirements'])]
+        self.requirements = {}
+        for r in walk_gen(self._data['requirements']):
+            self.requirements[r.tag] = r
     
     
     def requirementsTable(self):
@@ -68,8 +70,16 @@ class DataProvider():
         header = ["tag","status","solution","validation"]
 
         rows = []
-        for r in self.requirements:
+        for tag,r in self.requirements.items():
             rows.append([ str(getattr(r,h)) for h in header])
         
         return dict(header=header,rows=rows)
         
+        
+if __name__ == "__main__":
+    # some quick-and-dirty prototyping here, sorry
+    
+    dp = DataProvider('../requirements/simpleSE.yml')
+    
+    print(dp.requirements)
+    

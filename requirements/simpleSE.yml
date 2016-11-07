@@ -96,7 +96,7 @@ requirements:
     req: I **want** to produce graphic charts visualizing requirement dependancy
     requirements :
       R008: 
-        #req: tool **must** print requirements in a tree structure
+        req: tool **must** print requirements in a tree structure
 
 
 # this section describes found solutions. These don't need to be cascading.
