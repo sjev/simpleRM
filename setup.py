@@ -1,43 +1,34 @@
 #!/usr/bin/env python
 
-"""Setup script for Doorstop."""
+"""Setup script for simpleRM """
 
 import setuptools
 
-from doorstop import __project__, __version__, CLI, GUI, SERVER, DESCRIPTION
+from simpleRM import __project__, __version__, CLI, DESCRIPTION
 
-try:
-    README = open("README.rst").read()
-    CHANGELOG = open("CHANGELOG.rst").read()
-except FileNotFoundError:
-    LONG_DESCRIPTION = "<placeholder>"
-else:
-    LONG_DESCRIPTION = README + '\n' + CHANGELOG
 
 setuptools.setup(
     name=__project__,
     version=__version__,
 
     description=DESCRIPTION,
-    url='http://doorstop.readthedocs.io/',
-    author='Jace Browning',
-    author_email='jacebrowning@gmail.com',
+    url='https://sjev.github.io/simpleRM/',
+    author='Jev Kuznetsov',
+    author_email='jev.kuznetsov@gmail.com',
 
     packages=setuptools.find_packages(),
-    package_data={'doorstop.core': ['files/*']},
+    #package_data={'doorstop.core': ['files/*']},
 
     entry_points={
-        'console_scripts': [CLI + ' = doorstop.cli.main:main',
-                            GUI + ' = doorstop.gui.main:main',
-                            SERVER + ' = doorstop.server.main:main']
+        'console_scripts': [CLI + ' = simpleRM.main:main']
     },
 
-    long_description=LONG_DESCRIPTION,
+    
     license='LGPL',
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 3 - Alpha',
         'Environment :: Console',
-        'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
+        'License :: GNU Lesser General Public License v3 (LGPLv3)',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
@@ -52,9 +43,7 @@ setuptools.setup(
     install_requires=[
         "PyYAML >= 3.10, < 4",
         "Markdown >= 2, < 3",
-        "openpyxl >= 2.1, < 2.2, != 2.1.0",
         "bottle >= 0.12, < 0.13",
-        "requests >= 2, < 3",
-        "pyficache >= 0.2.3, < 0.3",
+        "mkdocs >= 0.15"
     ],
 )

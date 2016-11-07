@@ -1,1 +1,0 @@
-print('CMD utility for simpleRM')
