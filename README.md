@@ -21,11 +21,22 @@ In short, this tool is designed to assist in Systems Engineering process. It pro
 * because architects and designers can do a better job with a good tool
 * because tools should be as simple as possible, but not any simpler
 
-## Example ouptput documentation
+## Documentation
 
 *this project documents its own requirements decomposition and design choices, how cool is that!*
 
 See:  https://sjev.github.io/simpleRM/
+
+
+## Installation
+at this moment installation is only available from source, pypi will package will be available once the project leaves alpha stage.
+
+```
+$ git clone https://github.com/sjev/simpleRM.git
+$ cd simpleRM
+$ python setup.py install
+
+```
 
 
 ## Alternatives
