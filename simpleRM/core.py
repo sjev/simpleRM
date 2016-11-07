@@ -15,12 +15,15 @@ def walk_gen(d, parent='ROOT'):
     """ tree walker, used to traverse through requirement trees """
     for k in sorted(d.keys()):
         v = d[k]
-        yield Requirement(k,parent,v)
+        try:
         
-        if 'requirements' in v.keys():
-            for r in walk_gen(v['requirements'],parent=k) :
-                yield r
-
+            yield Requirement(k,parent,v)
+            
+            if 'requirements' in v.keys():
+                for r in walk_gen(v['requirements'],parent=k) :
+                    yield r
+        except:
+            print('Error parsing requirement with tag, check synthax! ',k)
 
 class Requirement():
     

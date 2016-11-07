@@ -52,7 +52,9 @@ requirements:
       R008: !include userFriendly.yml
 
   A04:
-    req: I **want**  to match each requirement to a *solution* and *validation*
+    req: I **want**  to know when all requirement dependencies are satisfied.
+    rationale: Quick overview for requirement dependancy.
+    #requirements:
   
   A05: 
     req: I **want** each requirement to be traceable
@@ -83,15 +85,18 @@ requirements:
         rationale : "because identifiers are entered by hand, there is a chance of duplicate entries. these are not allowed"
         related: R008d
 
-  A08:
+  A09:
     req: I **want** to easliy cooperate with others on writing requirement documents
     requirements:
       R007:
         req: tool **must** support multiple users
         solution: S003
 
-  A09:
+  A10:
     req: I **want** to produce graphic charts visualizing requirement dependancy
+    requirements :
+      R008: 
+        #req: tool **must** print requirements in a tree structure
 
 
 # this section describes found solutions. These don't need to be cascading.
