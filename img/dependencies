@@ -1,0 +1,54 @@
+// dependencies
+digraph {
+	ROOT [label=root color=red style=filled]
+	A01 [label=A01]
+		ROOT -> A01
+	A02 [label=A02]
+		ROOT -> A02
+	R006 [label=R006]
+	A03 [label=A03]
+		ROOT -> A03
+	R008 [label=R008]
+	R008a [label=R008a]
+	R008b [label=R008b]
+	R008c [label=R008c]
+	R008d [label=R008d]
+	R009 [label=R009]
+	R009a [label=R009a]
+	R009b [label=R009b]
+	R009c [label=R009c]
+	A04 [label=A04]
+		ROOT -> A04
+	A05 [label=A05]
+		ROOT -> A05
+	R004 [label=R004]
+	A06 [label=A06]
+		ROOT -> A06
+	A07 [label=A07]
+		ROOT -> A07
+	R003 [label=R003]
+	A08 [label=A08]
+		ROOT -> A08
+	R004a [label=R004a]
+	A09 [label=A09]
+		ROOT -> A09
+	R007 [label=R007]
+	A10 [label=A10]
+		ROOT -> A10
+	R011 [label=R011]
+		A02 -> R006
+		A03 -> R008
+		A03 -> R009
+		A03 -> R009c
+		R008 -> R008c
+		R008 -> R008a
+		R008 -> R008b
+		R008 -> R008d
+		R009 -> R009a
+		R009 -> R009b
+		A05 -> R004
+		A07 -> R003
+		A08 -> R004a
+		A09 -> R007
+		A10 -> R011
+}
