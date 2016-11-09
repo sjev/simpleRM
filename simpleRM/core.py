@@ -25,7 +25,38 @@ def walk_gen(d,level=0, parent='ROOT'):
         except:
             print('Error parsing requirement with tag, check synthax! ',k)
 
-            
+def depGraph(requirements, fName):
+    """ 
+    crete a visual chart of requirement dependencies 
+    
+    Parameters
+    -----------
+    requirements : dict
+        dict, DataProvider.requirements 
+    fName : str
+        output filename, *without* extention
+    
+    """
+    
+    from graphviz import Digraph
+
+    dot = Digraph(comment='dependencies', format='svg')
+    
+    dot.node('ROOT','root',color='red',style='filled')
+    
+    # requirements
+    for req in requirements.values():
+        dot.node(req.tag,req.tag)
+        if req.parent =='ROOT':
+            dot.edge('ROOT',req.tag)
+        
+    # dependencies
+    for req in requirements.values():
+        if req.children is not None:
+            for child in req.children:
+                dot.edge(req.tag, child)     
+     
+    dot.render(fName)
             
 class Requirement():
     
@@ -82,6 +113,7 @@ class DataProvider():
             rows.append([ str(getattr(r,h)) for h in header])
         
         return dict(header=header,rows=rows)
+        
         
         
 if __name__ == "__main__":

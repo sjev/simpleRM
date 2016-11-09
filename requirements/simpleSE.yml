@@ -51,7 +51,7 @@ requirements:
           R009a:  {req: tool **must** produce html output}
           R009b:  {req: tool **should** produce pdf}
       
-      R009a: 
+      R009c: 
         req: tool **should** produce 'skeleton' structures
         rationale: to avoid copy-pasting of previous documents.
 
@@ -99,7 +99,7 @@ requirements:
   A10:
     req: I **want** to produce graphic charts visualizing requirement dependancy
     requirements :
-      R008: 
+      R011: 
         req: tool **must** print requirements in a tree structure
         solution: S005
 

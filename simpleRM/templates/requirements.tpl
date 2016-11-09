@@ -8,7 +8,8 @@ icons = OrderedDict(handshake="handshake-o",
                     conflict="exclamation-triangle",
                     check="check-square-o",
                     requirement="cogs",
-                    solution="lightbulb-o" )
+                    solution="lightbulb-o",
+                    arrow_right="arrow-right")
 
 def insertIcon(icon):
    return "<i class='fa fa-%s' aria-hidden='true'> </i> " % icons[icon]
@@ -26,6 +27,11 @@ end
 %for k,v in icons.items():
 * <i class="fa fa-{{v}}" aria-hidden="true"> </i> : {{k}}
 %end
+
+# Dependencies
+![dependencies](img/dependencies.svg)
+
+
 
 # Detailed list
 %for r in dp.requirements.values():
