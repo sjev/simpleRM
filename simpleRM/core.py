@@ -44,7 +44,7 @@ class Requirement():
         
         for k in ["tag","req","rationale","status","solution","validation"]:
             if k in properties.keys():
-                self.__setattr__(k, properties[k])
+                self.__setattr__(k, properties[k].strip() if isinstance(properties[k],str) else properties[k])
 
         if 'requirements' in properties.keys():
             self.children = list(properties['requirements'].keys())

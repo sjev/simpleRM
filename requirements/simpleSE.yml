@@ -42,14 +42,18 @@ requirements:
       I **want** to spend as little time as possible on mechanical tasks, like
       formatting documents.
     requirements:
+      # here is an example on how to include a separate file
+      R008: !include userFriendly.yml
+      
       R009:
         req: tool **must** generate requirement documents 
         requirements:
           R009a:  {req: tool **must** produce html output}
           R009b:  {req: tool **should** produce pdf}
       
-      # here is an example on how to include a separate file
-      R008: !include userFriendly.yml
+      R009a: 
+        req: tool **should** produce 'skeleton' structures
+        rationale: to avoid copy-pasting of previous documents.
 
   A04:
     req: I **want**  to know when all requirement dependencies are satisfied.

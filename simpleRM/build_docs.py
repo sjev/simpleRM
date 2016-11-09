@@ -8,12 +8,16 @@ script to build documentation using simpleRM
 
 from core import DataProvider
 from bottle import template
+from pprint import pprint
 
 ROOT = '../requirements/simpleSE.yml'
 
 requirements_md = '../docs/docs/requirements.md'
 
 dp = DataProvider(ROOT)
+
+
+pprint(dp.requirements)
 
 # build requirements
 txt = template("templates/requirements.tpl",dp= dp)
