@@ -25,6 +25,30 @@ def walk_gen(d, parent='ROOT'):
         except:
             print('Error parsing requirement with tag, check synthax! ',k)
 
+def parse_reqs(d,reqs={},parent=None):
+    """ build requirement tree """
+    
+    for k,v in sorted(d.items(),key=lambda x: x[0]):
+        
+        print(k)
+        #try:
+        reqs[k] = k
+        
+        if 'requirements' in v.keys():
+            print('deeper into', k)
+            reqs['requirements'] = {}
+            parse_reqs(v['requirements'],reqs['requirements'], parent=k)
+        
+            #reqs[k] = Requirement(k,parent,v)
+            
+            
+        
+        #except:
+        #print('Error parsing requirement with tag, check synthax! ',k)
+        
+            
+            
+            
 class Requirement():
     
     def __init__(self,tag,parent,properties):
@@ -49,7 +73,8 @@ class Requirement():
         return None
             
     def __repr__(self):
-        return '%s parent:%s children:%s' % (self.tag,self.parent, str(self.children))
+        #return '%s parent:%s children:%s' % (self.tag,self.parent, str(self.children))
+        return str(self.tag)
         
         
 class DataProvider():
@@ -60,8 +85,10 @@ class DataProvider():
         self._data = yaml.load(open(fName,'r'),loader.Loader) 
     
         self.requirements = {}
-        for r in walk_gen(self._data['requirements']):
-            self.requirements[r.tag] = r
+        #for r in walk_gen(self._data['requirements']):
+        #    self.requirements[r.tag] = r
+        parse_reqs(self._data['requirements'],self.requirements)
+        
     
     
     def requirementsTable(self):
