@@ -29,16 +29,16 @@ def parse_reqs(d,reqs={},parent=None):
     """ build requirement tree """
     
     for k,v in sorted(d.items(),key=lambda x: x[0]):
-        
-        print(k)
+        print(reqs)
+        #print(k)
         #try:
         reqs[k] = k
         
         if 'requirements' in v.keys():
             print('deeper into', k)
-            reqs['requirements'] = {}
-            parse_reqs(v['requirements'],reqs['requirements'], parent=k)
-        
+            #reqs['requirements'] = {}
+            parse_reqs(v['requirements'],{}, parent=k)
+            
             #reqs[k] = Requirement(k,parent,v)
             
             
