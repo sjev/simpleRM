@@ -1,18 +1,36 @@
-% reqTable=dp.requirementsTable()
+<% 
+# prepare functions etc
+reqTable=dp.requirementsTable()
 
-# Requirements
+from collections import OrderedDict
+
+icons = OrderedDict(handshake="handshake-o",
+                    conflict="exclamation-triangle",
+                    check="check-square-o",
+                    requirement="cogs",
+                    solution="lightbulb-o" )
+
+def insertIcon(icon):
+   return "<i class='fa fa-%s' aria-hidden='true'> </i> " % icons[icon]
+end 
+                   
+%>
+
+# Requirements tree
 
 %for r in dp.requirements.values():
-{{' '*4*r.level}}* [{{r.tag}}](#{{r.tag}})     {{r.req}}
+{{' '*4*r.level}}* {{!insertIcon('requirement')}}[{{r.tag}}](#{{r.tag}})     {{r.req}}
 %end
 
+## Legend
+%for k,v in icons.items():
+* <i class="fa fa-{{v}}" aria-hidden="true"> </i> : {{k}}
+%end
 
-
-
-
+# Detailed list
 %for r in dp.requirements.values():
 <a id="{{r.tag}}"></a>
-### {{r.tag}} {{r.req}}
+** {{r.tag}} ** {{r.req}}
 ** Rationale:** {{r.rationale}} <br>
 ** Parent:** [{{r.parent}}](#{{r.parent}})
 

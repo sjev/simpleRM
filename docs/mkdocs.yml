@@ -6,6 +6,7 @@ pages:
 
 extra_css:
     - css/extra.css
+    - css/font_awesome/css/font-awesome.min.css
 
 markdown_extensions:
     - toc:
