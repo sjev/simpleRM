@@ -46,7 +46,7 @@ def depGraph(requirements, fName):
     
     # requirements
     for req in requirements.values():
-        dot.node(req.tag,req.tag)
+        dot.node(req.tag,req.tag, URL="#"+req.tag)
         if req.parent =='ROOT':
             dot.edge('ROOT',req.tag)
         
