@@ -2,6 +2,12 @@
 
 # Requirements
 
+%for r in dp.requirements.values():
+{{' '*4*r.level}}* {{r.tag}}-{{r.req}}
+%end
+
+
+
 <table >
 <tr>
 %for h in reqTable['header']:

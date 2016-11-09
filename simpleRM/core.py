@@ -9,54 +9,36 @@ main simpleRM module
 
 import yaml
 import loader
+from collections import OrderedDict
 
-
-def walk_gen(d, parent='ROOT'):
+def walk_gen(d,level=0, parent='ROOT'):
     """ tree walker, used to traverse through requirement trees """
     for k in sorted(d.keys()):
         v = d[k]
         try:
         
-            yield Requirement(k,parent,v)
+            yield Requirement(k,parent,level,v)
             
             if 'requirements' in v.keys():
-                for r in walk_gen(v['requirements'],parent=k) :
+                for r in walk_gen(v['requirements'],level=level+1,parent=k) :
                     yield r
         except:
             print('Error parsing requirement with tag, check synthax! ',k)
 
-def parse_reqs(d,reqs={},parent=None):
-    """ build requirement tree """
-    
-    for k,v in sorted(d.items(),key=lambda x: x[0]):
-        print(reqs)
-        #print(k)
-        #try:
-        reqs[k] = k
-        
-        if 'requirements' in v.keys():
-            print('deeper into', k)
-            #reqs['requirements'] = {}
-            parse_reqs(v['requirements'],{}, parent=k)
-            
-            #reqs[k] = Requirement(k,parent,v)
-            
-            
-        
-        #except:
-        #print('Error parsing requirement with tag, check synthax! ',k)
-        
-            
             
             
 class Requirement():
     
-    def __init__(self,tag,parent,properties):
+    def __init__(self,tag,parent,level,properties):
         """ 
-        tag: identifier, parent: parent requirement tag, properties: dict of parameters 
+        tag: identifier, 
+        parent: parent requirement tag, 
+        level: requirement level in the tree
+        properties: dict of parameters 
         """
         self.tag = tag # unique identifier
         self.parent = parent # parent requirement
+        self.level = level # requirement level in the tree
         
         self.status = properties["status"] if "status" in properties.keys() else "draft"
         
@@ -73,8 +55,8 @@ class Requirement():
         return None
             
     def __repr__(self):
-        #return '%s parent:%s children:%s' % (self.tag,self.parent, str(self.children))
-        return str(self.tag)
+        return '%s parent:%s children:%s,level:%i' % (self.tag,self.parent, str(self.children),self.level)
+        #return str(self.tag)
         
         
 class DataProvider():
@@ -84,10 +66,9 @@ class DataProvider():
         
         self._data = yaml.load(open(fName,'r'),loader.Loader) 
     
-        self.requirements = {}
-        #for r in walk_gen(self._data['requirements']):
-        #    self.requirements[r.tag] = r
-        parse_reqs(self._data['requirements'],self.requirements)
+        self.requirements = OrderedDict()
+        for r in walk_gen(self._data['requirements']):
+            self.requirements[r.tag] = r
         
     
     
@@ -105,8 +86,11 @@ class DataProvider():
         
 if __name__ == "__main__":
     # some quick-and-dirty prototyping here, sorry
+    from pprint import pprint
     
     dp = DataProvider('../requirements/simpleSE.yml')
     
-    print(dp.requirements)
+    
+    for req in dp.requirements.values():
+        print(req)
     
