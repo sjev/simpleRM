@@ -8,8 +8,9 @@ main simpleRM module
 """
 
 import yaml
-import loader
+from . import loader
 from collections import OrderedDict
+import sys
 
 def walk_gen(d,level=0, parent='ROOT'):
     """ tree walker, used to traverse through requirement trees """
@@ -25,7 +26,7 @@ def walk_gen(d,level=0, parent='ROOT'):
         except:
             print('Error parsing requirement with tag, check synthax! ',k)
 
-def depGraph(requirements, fName):
+def depGraph(requirements, fName=None):
     """ 
     crete a visual chart of requirement dependencies 
     
@@ -42,7 +43,7 @@ def depGraph(requirements, fName):
 
     dot = Digraph(comment='dependencies', format='svg')
     
-    dot.node('ROOT','root',color='red',style='filled')
+    dot.node('ROOT','root',color='gray',style='filled')
     
     # requirements
     for req in requirements.values():
@@ -50,13 +51,21 @@ def depGraph(requirements, fName):
         if req.parent =='ROOT':
             dot.edge('ROOT',req.tag)
         
-    # dependencies
+    # children dependencies
     for req in requirements.values():
         if req.children is not None:
             for child in req.children:
-                dot.edge(req.tag, child)     
-     
-    dot.render(fName)
+                dot.edge(req.tag, child)
+   
+        if req.dependsOn is not None:
+            for child in req.dependsOn:
+                
+                dot.edge(req.tag, child)
+    
+    if fName is not None: 
+        dot.render(fName)
+    
+    return dot
             
 class Requirement():
     
@@ -79,6 +88,9 @@ class Requirement():
 
         if 'requirements' in properties.keys():
             self.children = list(properties['requirements'].keys())
+            
+        if 'dependsOn' in properties.keys():
+            self.dependsOn = properties['dependsOn']
 
     
     def __getattr__(self,attr):
@@ -95,8 +107,12 @@ class DataProvider():
     
     def __init__(self, fName):
         
-        self._data = yaml.load(open(fName,'r'),loader.Loader) 
-    
+        try:
+            self._data = yaml.load(open(fName,'r'),loader.Loader) 
+        except Exception as e:
+            print('ERROR ',e)
+            raise(e)
+            
         self.requirements = OrderedDict()
         for r in walk_gen(self._data['requirements']):
             self.requirements[r.tag] = r
