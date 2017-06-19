@@ -8,9 +8,10 @@ main simpleRM module
 """
 
 import yaml
-from . import loader
+import loader
 from collections import OrderedDict
 import sys
+import os
 
 def walk_gen(d,level=0, parent='ROOT'):
     """ tree walker, used to traverse through requirement trees """
@@ -62,8 +63,10 @@ def depGraph(requirements, fName=None):
                 
                 dot.edge(req.tag, child)
     
-    if fName is not None: 
-        dot.render(fName)
+    if fName is not None:
+   
+        dot.save(fName+'.gv')
+        os.system('dot -Tsvg %s.gv -o %s.svg' % (fName,fName))
     
     return dot
             

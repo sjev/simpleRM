@@ -1,8 +1,10 @@
 site_name: simpleRM docs
+theme: readthedocs
 
 pages:
   - 'index.md'
   - 'requirements.md'
+  - 'test_notebook.md'
 
 extra_css:
     - css/extra.css
@@ -12,3 +14,4 @@ markdown_extensions:
     - toc:
         permalink: 
     - admonition:
+    
