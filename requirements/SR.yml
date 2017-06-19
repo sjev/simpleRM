@@ -1,0 +1,69 @@
+
+function: DP-IP
+author : JKUZ  
+
+
+  
+---  
+1: 
+    req : I **want** requirements to be documented in a consistent, structural way.
+    rationale : |
+      A user (architect or designer) **needs** to manage requirements of a complex system.
+      A good requirement management system has a set of high-level requirements  
+
+
+2: 
+    req: I **want** to track requirement history and create baselines
+
+3:
+    req: | 
+      I **want** to spend as little time as possible on mechanical tasks, like
+      formatting documents.
+      
+      
+      
+
+4:
+    req: I **want**  to know when all requirement dependencies are satisfied.
+    rationale: Quick overview for requirement dependancy.
+
+
+5: 
+    req: I **want** each requirement to be traceable
+
+6: 
+    req: I **want** an overview that shows ho high-level requirements match final low-level solutions
+
+
+7:
+    req: I **want** each requirement to have a clear status, from 'draft' to 'satisfied'
+    rationale : | 
+          requirements are defined and changed during development process.
+          Usually a requirement goes through different stages from draft to 'validated' or 'satisfied'
+
+
+8:
+    req: I **want** the tool to check for requirment consistency
+    requirements:
+      R004a:
+        req : tool **must** check identifiers for consistency
+        rationale : "because identifiers are entered by hand, there is a chance of duplicate entries. these are not allowed"
+        related: R008d
+
+9:
+    req: I **want** to easliy cooperate with others on writing requirement documents
+    requirements:
+      R007:
+        req: tool **must** support multiple users
+        solution: S003
+
+10:
+    req: I **want** to produce graphic charts visualizing requirement dependancy
+    requirements :
+      R011: 
+        req: tool **must** print requirements in a tree structure
+        solution: S005
+
+
+
+  

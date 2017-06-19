@@ -1,0 +1,18 @@
+# this section describes found solutions. These don't need to be cascading.
+1 : |
+  each requirment has a default status, being 'draft'. A new status can be defined with
+  keyword 'status'
+2 : by using yaml data format, the user is encouraged to store data in a structured way
+
+3 : | 
+by using plain text files and *git* version control, keeping track of changes is provided out of the box.
+git tags can be used for baselining the system.
+
+4 : | 
+each requirement is assigned a unique key by the user. When extracting requirements, these
+will be sorted by their keys. This is unfortunately more labor-intensive than autonumbering,
+but ensures that requirement identifiers are consistent between baselines and intermediate
+versions.
+
+5: |
+write trees as nested lists. Than use a little [css trick]( http://odyniec.net/articles/turning-lists-into-trees/)

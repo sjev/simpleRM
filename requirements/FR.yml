@@ -1,0 +1,20 @@
+1:
+    req: tool **must** have version control
+    parent : SR_1
+    
+2:
+    req: tool **must** generate requirement documents 
+    parent : SR_2
+    
+3:  
+    req: tool **must** check requirement consistency
+    parent : SR_4
+    
+4: 
+    req: each requirement **must** have a unique identifier
+    rationale : "needed to link requirements for traceablility"
+    parent : SR_5
+    
+5:
+    parent: SR_7
+    req: each requirement **should** have a status
